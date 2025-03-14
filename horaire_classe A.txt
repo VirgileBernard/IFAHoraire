@@ -1,0 +1,1156 @@
+Année : 2024-2025 (Edition : 07-02-25 / Derniere Modification :23-01-25 03:05:46 PM)
+Classe : COEN - X75 X77 1A - Développeur web (BE/FE) (W1/B/X75/25/0/N/165709)
+Centre IFAPME Namur-Brabant wallon - Wavre
+Rue Charles Jaumotte, 7 1300 Wavre
+Lieu de cours : The Gate - Axis Parc
+Métier : Développeur WEB front end (X75)
+Jour de cours : Lundi, Mardi
+Heures : 1er Semestre : 108h / 2ème Semestre : 232h / Total : 340h
+Horaire de cours :
+1
+
+23-09-24
+
+Lu
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+2
+
+24-09-24
+
+Ma
+
+08:30 LBA (GAT5)
+
+09:20 LBA (GAT5)
+
+10:30 LBA (GAT5)
+
+11:20 LBA (GAT5)
+
+3
+
+30-09-24
+
+Lu
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+4
+
+01-10-24
+
+Ma
+
+08:30 LBA (GAT5)
+
+09:20 LBA (GAT5)
+
+10:30 LBA (GAT5)
+
+11:20 LBA (GAT5)
+
+5
+
+07-10-24
+
+Lu
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+6
+
+08-10-24
+
+Ma
+
+08:30 LBA (GAT5)
+
+09:20 LBA (GAT5)
+
+10:30 LBA (GAT5)
+
+11:20 LBA (GAT5)
+
+7
+
+21-10-24
+
+Lu
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+8
+
+22-10-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+9
+
+29-10-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+10
+
+04-11-24
+
+Lu
+
+08:30 LBA (GAT5)
+
+09:20 LBA (GAT5)
+
+10:30 LBA (GAT5)
+
+11:20 LBA (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+11
+
+05-11-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+12
+
+12-11-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+13
+
+18-11-24
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+14
+
+25-11-24
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+15
+
+26-11-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+16
+
+02-12-24
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+17
+
+03-12-24
+
+Ma
+
+08:30 MDB (GAT5)
+
+09:20 MDB (GAT5)
+
+10:30 MDB (GAT5)
+
+11:20 MDB (GAT5)
+
+18
+
+09-12-24
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+19
+
+10-12-24
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+20
+
+16-12-24
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+21
+
+17-12-24
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+22
+
+06-01-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+23
+
+07-01-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+24
+
+13-01-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 LBA (GAT5)
+
+13:50 LBA (GAT5)
+
+14:50 LBA (GAT5)
+
+15:40 LBA (GAT5)
+
+25
+
+14-01-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+26
+
+20-01-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+27
+
+21-01-25
+
+Ma
+
+Année : 2024-2025 (Edition : 07-02-25 / Derniere Modification :23-01-25 03:05:46 PM)
+Classe : COEN - X75 X77 1A - Développeur web (BE/FE) (W1/B/X75/25/0/N/165709)
+28
+
+27-01-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+29
+
+28-01-25
+
+Ma
+
+30
+
+03-02-25
+
+Lu
+
+31
+
+04-02-25
+
+32
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+10-02-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+33
+
+11-02-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+34
+
+17-02-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+35
+
+18-02-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+36
+
+24-02-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+37
+
+25-02-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+38
+
+03-03-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+39
+
+04-03-25
+
+Ma
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+40
+
+10-03-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+41
+
+11-03-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+42
+
+17-03-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+43
+
+18-03-25
+
+Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
+
+44
+
+24-03-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+45
+
+31-03-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+46
+
+01-04-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+47
+
+07-04-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+48
+
+08-04-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+49
+
+14-04-25
+
+Lu
+
+08:30 LPB (GAT5)
+
+09:20 LPB (GAT5)
+
+10:30 LPB (GAT5)
+
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+50
+
+15-04-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+51
+
+22-04-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+52
+
+05-05-25
+
+Lu
+
+08:30 WKS (GAT5)
+
+09:20 WKS (GAT5)
+
+10:30 WKS (GAT5)
+
+11:20 WKS (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+53
+
+06-05-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+54
+
+12-05-25
+
+Lu
+
+08:30 WKS (GAT5)
+
+09:20 WKS (GAT5)
+
+10:30 WKS (GAT5)
+
+11:20 WKS (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
+55
+
+13-05-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+56
+
+19-05-25
+
+Lu
+
+08:30 WKS (GAT5)
+
+09:20 WKS (GAT5)
+
+10:30 WKS (GAT5)
+
+11:20 WKS (GAT5)
+
+13:00 ANG (GAT5)
+
+13:50 ANG (GAT5)
+
+14:50 ANG (GAT5)
+
+15:40 ANG (GAT5)
+
+57
+
+20-05-25
+
+Ma
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+Année : 2024-2025 (Edition : 07-02-25 / Derniere Modification :23-01-25 03:05:46 PM)
+Classe : COEN - X75 X77 1A - Développeur web (BE/FE) (W1/B/X75/25/0/N/165709)
+58
+
+26-05-25
+
+Lu
+
+08:30 WKS (GAT5)
+
+09:20 WKS (GAT5)
+
+10:30 WKS (GAT5)
+
+59
+
+27-05-25
+
+Ma
+
+60
+
+02-06-25
+
+Lu
+
+11:20 WKS (GAT5)
+
+13:00 ANG (GAT5)
+
+13:50 ANG (GAT5)
+
+14:50 ANG (GAT5)
+
+15:40 ANG (GAT5)
+
+08:30 ANG (GAT5)
+
+09:20 ANG (GAT5)
+
+10:30 ANG (GAT5)
+
+11:20 ANG (GAT5)
+
+08:30 WKS (GAT5)
+
+09:20 WKS (GAT5)
+
+10:30 WKS (GAT5)
+
+11:20 WKS (GAT5)
+
+13:00 WKS (GAT5)
+
+13:50 WKS (GAT5)
+
+14:50 WKS (GAT5)
+
+15:40 WKS (GAT5)
+
+Légende : Heure de début du cours - Matière - (Local) - (R) qui correspond aux heures de cours rattrapées
+
+Matières :
+Code
+
+Matière
+
+Heures
+
+Formateur
+
+Début
+
+Fin
+
+ADB
+
+X75/25 Atelier développement, bases
+
+60
+
+ROUSSEAU Nathan
+
+20-01-25
+
+12-05-25
+
+ANG
+
+X75/25 Anglais
+
+40
+
+MEESSEN Benoît
+
+01-04-25
+
+27-05-25
+
+LBA
+
+X75/25 Langages de balisage
+
+64
+
+GERARD Cédric
+
+23-09-24
+
+13-01-25
+
+LDB
+
+X75/25 Langages de bases de données, bases
+
+48
+
+LAMBERT Gauthier
+
+10-12-24
+
+18-03-25
+
+LPB
+
+X75/25 Langages de programmation, bases
+
+80
+
+GERARD Cédric
+
+18-11-24
+
+14-04-25
+
+MDB
+
+X75/25 Métier de développeur, bases
+
+24
+
+LAMBERT Gauthier
+
+22-10-24
+
+03-12-24
+
+WKS
+
+X75/25 Workshop
+
+24
+
+05-05-25
+
+02-06-25
+
+Remarques :
+15/09/2024 :
+
+(BOUVE Olivier), 15/09/2024 : (BOUVE Olivier)
+
+

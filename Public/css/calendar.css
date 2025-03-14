@@ -1,0 +1,31 @@
+.calendar__table {
+    width: 100%;
+    height: calc(100vh - 128px);
+}
+
+.calendar__table td {
+    border: 1px solid black;
+    padding: 10px;
+    vertical-align: top;
+    width: 14.4%;
+    height: 20%;
+}
+
+.calendar__table--6weeks td {
+    height: 16.66%;
+}
+
+.calendar-weekday {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: black;
+}
+
+
+.calendar__othermonth {
+    opacity: 0.3;
+}
+
+.calendar__day {
+    font-size: 1.2em;
+}
