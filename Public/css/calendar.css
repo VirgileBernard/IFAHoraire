@@ -1,6 +1,7 @@
 .calendar__table {
-    width: 100%;
+    width: 90%;
     height: calc(100vh - 128px);
+    margin: 0 auto;
 }
 
 .calendar__table td {
@@ -28,4 +29,14 @@
 
 .calendar__day {
     font-size: 1.2em;
+}
+
+.calendar__table .has-course {
+    background-color: #e0f7fa;
+    color: #006064;
+}
+
+.course-info {
+    font-size: 0.8em;
+    margin-top: 5px;
 }

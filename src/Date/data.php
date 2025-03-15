@@ -1,6 +1,6 @@
 <?php
 // Chemin vers le fichier texte
-$file_path = 'horaire_classe A.txt';
+$file_path = 'C:/wamp64/www/IFAPME/gitIFAHoraire/IFAHoraire/src/Date/horaire_classe A.txt';
 
 // Lire le contenu du fichier
 $content = file_get_contents($file_path);
@@ -76,6 +76,8 @@ foreach ($schedule as &$day) {
 ksort($schedule);
 
 ?>
+
+<!-- tableau complet des cours  -->
 
 <!-- <!DOCTYPE html>
 <html lang="fr">
