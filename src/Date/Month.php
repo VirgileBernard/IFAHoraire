@@ -3,7 +3,7 @@
 namespace App\Date;
 
 class Month {
-    public $days=['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+    public $days=['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'];
 
     private $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'];
     public $month;

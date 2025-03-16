@@ -1,11 +1,64 @@
-.calendar__table {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: #91A7E0;
+    height: 100vh;
+}
+
+
+.navbar {
+    border-radius: 8px;
+    width: 95%;
+    margin: 2vh auto;
+}
+
+.calendrierContainer {
+    background-color: rgba(188, 188, 188, 0.3);
     width: 90%;
-    height: calc(100vh - 128px);
     margin: 0 auto;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.monthSelector {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btn {
+    height: 5vh;
+    font-style: bold;
+}
+
+.calendrierContainer h1 {
+    color: white;
+    font-family: inter;
+    font-weight: 600;
+
+}
+
+.calendar-header {
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+    text-align: left;
+}
+
+.calendar-header th {
+    /* padding: 10px; */
+    /* border-radius: 16px; */
+    /* border: 1px solid #000000; */
+}
+
+.calendar__table {
+    width: 100%;
+    height: calc(100vh - 128px);
+    /* margin: 0 auto; */
 }
 
 .calendar__table td {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    /* border-radius: 8px; */
     padding: 10px;
     vertical-align: top;
     width: 14.4%;
@@ -19,7 +72,7 @@
 .calendar-weekday {
     font-weight: bold;
     font-size: 1.2em;
-    color: black;
+    color: #1D212D;
 }
 
 
@@ -29,14 +82,58 @@
 
 .calendar__day {
     font-size: 1.2em;
+    background-color: rgb(255, 255, 255);
+
 }
 
 .calendar__table .has-course {
-    background-color: #e0f7fa;
-    color: #006064;
+    /* background-color: #e0f7fa; */
+    color: #012122;
 }
 
 .course-info {
     font-size: 0.8em;
     margin-top: 5px;
+}
+
+.calendar__day {
+    /* width: 100px; */
+    /* Ajuste selon tes besoins */
+    /* height: 100px; */
+    border: 1px solid #ccc;
+    /* text-align: center; */
+    /* vertical-align: top; */
+    /* padding: 5px; */
+}
+
+.calendar__day-content {
+    display: grid;
+    grid-template-rows: 20% 20% 60%;
+    text-align-last: left;
+}
+
+.calendar__othermonth {
+    background-color: #f0f0f0;
+    /* Gris pour les jours hors du mois */
+    color: #aaa;
+}
+
+.has-course {
+    /* background-color: rgb(255, 255, 255); */
+    /* Bleu pour les jours avec cours */
+}
+
+.no-course {
+    /* background-color: white; */
+    /* Blanc pour les jours sans cours */
+}
+
+.calendar__day-content span {
+    /* Tous les jours en gras */
+    font-weight: bold;
+}
+
+.weekend {
+    color: red;
+    background-color: rgba(251, 251, 255, 0.7);
 }
