@@ -13,7 +13,7 @@ body {
 }
 
 .calendrierContainer {
-    background-color: rgba(188, 188, 188, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     width: 90%;
     margin: 0 auto;
     padding: 30px;
@@ -32,9 +32,9 @@ body {
 }
 
 .calendrierContainer h1 {
-    color: white;
+    color: rgba(0, 0, 0, 1);
     font-family: inter;
-    font-weight: 600;
+    font-weight: 700;
 
 }
 
@@ -136,4 +136,93 @@ body {
 .weekend {
     color: red;
     background-color: rgba(251, 251, 255, 0.7);
+}
+
+
+
+/* upload.php  */
+
+
+
+.uploaderContainer {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.uploaderContainer h2 {
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.uploaderContainer input {
+    padding: 20px;
+    display: block;
+}
+
+.uploaderContainer button {
+    width: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* login.php */
+
+body {
+    background-color: #91A7E0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: inter;
+}
+
+.login-container {
+    text-align: center;
+    color: white;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-family: inter;
+    font-weight: 700;
+    color: #1D212D;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #1D212D;
+    text-align-last: left;
+    margin-left: 40px;
+
+}
+
+.login-container input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    background-color: #1D212D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Ajout de la transition */
+}
+
+.login-container button:hover {
+    background-color: white;
+    color: #1D212D;
 }
