@@ -2,7 +2,7 @@
 require '../src/Date/data.php';
 require '../src/Date/Month.php';
 
-$month = new App\Date\Month ($_GET['month'] ?? null, $_GET['year'] ?? null); 
+$month = new App\Date\Month($_GET['month'] ?? null, $_GET['year'] ?? null);
 $start = $month->getStartingDay()->modify("last monday");
 ?>
 
@@ -29,57 +29,55 @@ $start = $month->getStartingDay()->modify("last monday");
   </div>
 </nav>
 
-
 <div class="calendrierContainer">
 <!-- // affichage du mois -->
 <div class="d-flex flew-row align-items-center justify-content-start mx-sm-3">
   <div class="monthSelector">
   <a href="index.php?month=<?= $month->previousMonth()->month; ?>&year=<?= $month->previousMonth()->year; ?>" class="btn btn-primary">&lt</a>
-  <h1><?php echo $month->toString(); ?></h1>
-  <div>
-<a href="index.php?month=<?= $month->nextMonth()->month; ?>&year=<?= $month->nextMonth()->year; ?>" class="btn btn-primary">&gt</a>
-  </div>
+  <h1><?= $month->toString(); ?></h1>
+  <a href="index.php?month=<?= $month->nextMonth()->month; ?>&year=<?= $month->nextMonth()->year; ?>" class="btn btn-primary">&gt</a>
   </div>
 </div>
 
-
 <!-- // affichage du calendrier -->
 <table class="calendar__table calendar__table--<?= $month->getWeeks(); ?>weeks">
-<?php for ($i=0; $i < $month->getWeeks(); $i++): ?>
-  <!-- // afficher les jours au dessus du calendrier -->
-<tr class="calendar-header">
-  <?php foreach($month->days as $day): ?>
-    <!-- // seulement pr la 1er semaine -->
-      <?php if ($i === 0): ?>
-    <th class="calendar-weekday"><?php echo $day; ?></th>
-    <?php endif; ?>
-  <?php endforeach; ?>
-</tr>
-  <tr>
-    <?php foreach($month->days as $k => $day): 
-      $date = (clone $start)->modify("+" . ($k + $i * 7) . "days");
-      $formattedDate = $date->format('Y-m-d');
-      $class = isset($schedule[$formattedDate]) ? 'has-course' : ''; // Ajout de la classe bleue
+
+<?php 
+$weeksDisplayed = 0;
+for ($i = 0; $i < $month->getWeeks(); $i++): ?>
+    <?php
+    $weekDates = [];
+    for ($k = 0; $k < 7; $k++) {
+        $weekDates[] = (clone $start)->modify("+" . ($k + $i * 7) . " days");
+    }
+    if (!$month->shouldDisplayWeek($weekDates)) {
+        continue;
+    }
+    $weeksDisplayed++;
     ?>
 
-
-
-<td class="calendar__day <?php echo !$month->withinMonth($date) ? 'calendar__othermonth' : ''; ?> <?php echo in_array($date->format('N'), [6, 7]) ? 'weekend' : ''; ?>">
-    <div class="calendar__day-content">
-        <span><?php echo $date->format('d'); ?></span>
-        <?php if (isset($schedule[$formattedDate])): ?>
-            <div class="course-info">
-                <?php echo ($schedule[$formattedDate]['start_time'] ?? '') . ' - ' . ($schedule[$formattedDate]['end_time'] ?? ''); ?><br>
-                <strong><?php echo $schedule[$formattedDate]['course'] ?? ''; ?> -
-                <?php echo $schedule[$formattedDate]['location'] ?? ''; ?><br>
-                <?php echo $schedule[$formattedDate]['professeur'] ?? ''; ?></strong>
+    <tr>
+        <?php foreach ($month->days as $k => $day): 
+            $date = (clone $start)->modify("+" . ($k + $i * 7) . " days");
+            $formattedDate = $date->format('Y-m-d');
+            $class = isset($schedule[$formattedDate]) ? 'has-course' : ''; // Ajout de la classe pour les cours
+        ?>
+        
+        <td class="calendar__day <?php echo !$month->withinMonth($date) ? 'calendar__othermonth' : ''; ?> <?php echo in_array($date->format('N'), [6, 7]) ? 'weekend' : ''; ?>">
+            <div class="calendar__day-content">
+                <span><?php echo $date->format('d'); ?></span>
+                <?php if (isset($schedule[$formattedDate])): ?>
+                    <div class="course-info">
+                        <?= ($schedule[$formattedDate]['start_time'] ?? '') . ' - ' . ($schedule[$formattedDate]['end_time'] ?? ''); ?><br>
+                        <strong><?= $schedule[$formattedDate]['course'] ?? ''; ?> -
+                        <?= $schedule[$formattedDate]['location'] ?? ''; ?><br>
+                        <?= $schedule[$formattedDate]['professeur'] ?? ''; ?></strong>
+                    </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
-    </div>
-</td>
-
-    <?php endforeach; ?>
-  </tr>
+        </td>
+        <?php endforeach; ?>
+    </tr>
 <?php endfor; ?>
 </table>
 </div>
