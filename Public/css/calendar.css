@@ -171,13 +171,14 @@ body {
 
 /* login.php */
 
-body {
+.bodyLogin {
     background-color: #91A7E0;
     height: 100vh;
     justify-content: center;
     align-items: center;
     margin: 0;
     font-family: inter;
+    display: flex;
 }
 
 .login-container {

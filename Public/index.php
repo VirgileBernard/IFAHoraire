@@ -1,4 +1,5 @@
 <?php 
+include 'header.php';
 require '../src/Date/data.php';
 require '../src/Date/Month.php';
 
@@ -17,9 +18,8 @@ $start = $month->getStartingDay()->modify("last monday");
     <title>Calendrier IFAPME</title>
 </head>
 <body>
-
 <!-- affichage navbar -->
-<nav class="navbar bg-body-tertiary">
+<!-- <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand">Calendrier IFAPME</a>
     <form class="d-flex" role="search">
@@ -27,7 +27,7 @@ $start = $month->getStartingDay()->modify("last monday");
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
-</nav>
+</nav> -->
 
 <div class="calendrierContainer">
 <!-- // affichage du mois -->
@@ -42,7 +42,7 @@ $start = $month->getStartingDay()->modify("last monday");
 <!-- // affichage du calendrier -->
 <table class="calendar__table calendar__table--<?= $month->getWeeks(); ?>weeks">
 
-<?php 
+<?php
 $weeksDisplayed = 0;
 for ($i = 0; $i < $month->getWeeks(); $i++): ?>
     <?php
@@ -50,12 +50,15 @@ for ($i = 0; $i < $month->getWeeks(); $i++): ?>
     for ($k = 0; $k < 7; $k++) {
         $weekDates[] = (clone $start)->modify("+" . ($k + $i * 7) . " days");
     }
-    if (!$month->shouldDisplayWeek($weekDates)) {
-        continue;
+    
+    // Vérifier si la semaine doit être affichée
+    if (!$month->shouldDisplayWeek($weekDates, $weeksDisplayed)) {
+        continue; // On saute cette semaine si elle ne doit pas être affichée
     }
+
     $weeksDisplayed++;
     ?>
-
+    
     <tr>
         <?php foreach ($month->days as $k => $day): 
             $date = (clone $start)->modify("+" . ($k + $i * 7) . " days");
@@ -76,9 +79,11 @@ for ($i = 0; $i < $month->getWeeks(); $i++): ?>
                 <?php endif; ?>
             </div>
         </td>
+
         <?php endforeach; ?>
     </tr>
 <?php endfor; ?>
+                  
 </table>
 </div>
 

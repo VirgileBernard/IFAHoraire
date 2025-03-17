@@ -1,11 +1,11 @@
-<?php
+<?php 
 
 namespace App\Date;
 
 class Month {
     public $month;
     public $year;
-    public $days = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+    public $days = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'];
 
     public function __construct(?int $month = null, ?int $year = null) {
         if ($month === null || $month < 1 || $month > 12) {
@@ -26,38 +26,17 @@ class Month {
         $firstDay = new \DateTime("{$this->year}-{$this->month}-01");
         $lastDay = (clone $firstDay)->modify('last day of this month');
         
-        // Déterminer le premier lundi du calendrier
         $firstMonday = clone $firstDay;
         if ($firstMonday->format('N') !== '1') {
             $firstMonday->modify('last monday');
         }
         
-        // Déterminer le dernier dimanche du calendrier
         $lastSunday = clone $lastDay;
         if ($lastSunday->format('N') !== '7') {
             $lastSunday->modify('next sunday');
         }
         
-        // Vérifier si la première ou la dernière semaine ne contient que des jours hors du mois
-        $weeks = ceil(($lastSunday->diff($firstMonday)->days + 1) / 7);
-        
-        // Simulation des semaines pour suppression des semaines contenant uniquement des jours hors mois
-        $date = clone $firstMonday;
-        $validWeeks = 0;
-        for ($i = 0; $i < $weeks; $i++) {
-            $daysOutOfMonth = 0;
-            for ($j = 0; $j < 7; $j++) {
-                if (!$this->withinMonth($date)) {
-                    $daysOutOfMonth++;
-                }
-                $date->modify('+1 day');
-            }
-            // Si la semaine entière est hors du mois, elle n'est pas comptée
-            if ($daysOutOfMonth !== 7) {
-                $validWeeks++;
-            }
-        }
-        return $validWeeks;
+        return ceil(($lastSunday->diff($firstMonday)->days + 1) / 7);
     }
 
     public function getStartingDay(): \DateTime {
@@ -88,15 +67,32 @@ class Month {
         return new self($month, $year);
     }
 
-    // si il y a 7 jours outOfMonth = ne pas afficher
-    public function shouldDisplayWeek(array $dates): bool {
+    // Si une semaine est entièrement hors du mois, elle est supprimée, sauf si le mois commence un lundi
+    public function shouldDisplayWeek(array $dates, int $weeksDisplayed): bool {
         $outOfMonthDays = 0;
+        $inMonthDays = 0;
         foreach ($dates as $date) {
-            if (!$this->withinMonth($date)) {
+            if ($this->withinMonth($date)) {
+                $inMonthDays++;
+            } else {
                 $outOfMonthDays++;
             }
         }
-        return $outOfMonthDays < 7;
+        // Si la semaine contient au moins un jour du mois, elle doit être affichée
+        if ($inMonthDays > 0) {
+            return true;
+        }
+        
+        // Vérifier si le mois commence un lundi et forcer 5 semaines d'affichage
+        $firstDayOfMonth = $this->getStartingDay();
+        $firstDayIsMonday = $firstDayOfMonth->format('N') === '1';
+        
+        // On s'assure que le calendrier affiche toujours au moins 5 semaines
+        if ($firstDayIsMonday && $weeksDisplayed < 4) {
+            return true;
+        }
+        
+        // Si la semaine ne contient que des jours hors du mois ET que 5 semaines sont déjà affichées, on l'exclut
+        return $weeksDisplayed < 5;
     }
 }
-

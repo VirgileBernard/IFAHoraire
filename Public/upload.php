@@ -1,3 +1,6 @@
+<?php
+include 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,7 +13,7 @@
 <body>
 
 <!-- affichage navbar -->
-<nav class="navbar bg-body-tertiary">
+<!-- <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand">Calendrier IFAPME</a>
     <form class="d-flex" role="search">
@@ -18,7 +21,7 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
-</nav>
+</nav> -->
 
 <div class="uploaderContainer">
 <h2>Uploader votre fichier .txt</h2>
