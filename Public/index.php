@@ -18,16 +18,7 @@ $start = $month->getStartingDay()->modify("last monday");
     <title>Calendrier IFAPME</title>
 </head>
 <body>
-<!-- affichage navbar -->
-<!-- <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Calendrier IFAPME</a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav> -->
+
 
 <div class="calendrierContainer">
 <!-- // affichage du mois -->
@@ -41,7 +32,6 @@ $start = $month->getStartingDay()->modify("last monday");
 
 <!-- // affichage du calendrier -->
 <table class="calendar__table calendar__table--<?= $month->getWeeks(); ?>weeks">
-
 <?php
 $weeksDisplayed = 0;
 for ($i = 0; $i < $month->getWeeks(); $i++): ?>
@@ -67,18 +57,27 @@ for ($i = 0; $i < $month->getWeeks(); $i++): ?>
         ?>
         
         <td class="calendar__day <?php echo !$month->withinMonth($date) ? 'calendar__othermonth' : ''; ?> <?php echo in_array($date->format('N'), [6, 7]) ? 'weekend' : ''; ?>">
-            <div class="calendar__day-content">
-                <span><?php echo $date->format('d'); ?></span>
-                <?php if (isset($schedule[$formattedDate])): ?>
-                    <div class="course-info">
-                        <?= ($schedule[$formattedDate]['start_time'] ?? '') . ' - ' . ($schedule[$formattedDate]['end_time'] ?? ''); ?><br>
-                        <strong><?= $schedule[$formattedDate]['course'] ?? ''; ?> -
-                        <?= $schedule[$formattedDate]['location'] ?? ''; ?><br>
-                        <?= $schedule[$formattedDate]['professeur'] ?? ''; ?></strong>
+    <div class="calendar__day-content">
+<!-- à l'intérieur des cases  -->
+        <span><?php echo $date->format('d'); ?></span>
+        <?php if (!empty($schedule[$formattedDate]['blocks'])): ?>
+            <?php foreach ($schedule[$formattedDate]['blocks'] as $block): ?>
+                <div class="course-time">
+                    <!-- Heure début - fin -->
+                    <strong> <?= $block['start_time'] . ' - ' . $block['end_time'] ?></strong><br>
                     </div>
-                <?php endif; ?>
-            </div>
-        </td>
+                    <div class="course-info">
+                    <!-- Nom du cours, local et prof -->
+                    <strong>
+                        <?= $block['course'] ?> - 
+                        </strong><?= $block['location'] ?><br>
+                        <?= $block['professeur'] ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</td>
+
 
         <?php endforeach; ?>
     </tr>

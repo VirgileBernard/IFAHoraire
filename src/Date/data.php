@@ -8,12 +8,10 @@ $content = file_get_contents($file_path);
 // Séparer les lignes du fichier
 $lines = explode("\n", $content);
 
-// Initialiser les variables
+// Initialiser la structure de données
+$schedule = [];
 
-
-$schedule = []; // ma structure qui stockera les cours 
-
-
+// Liste des professeurs associés aux codes
 $professeurs = [
     'LBA' => 'GERARD Cédric',
     'LDB' => 'LAMBERT Gauthier',
@@ -22,106 +20,77 @@ $professeurs = [
     'WKS' => 'ROUSSEAU Nathan',
     'ADB' => 'ROUSSEAU Nathan',
     'ANG' => 'unknown',
-]; // liste des profs associés aux cours
+];
 
-// Parcourir les lignes pour extraire les informations
+// Parcourir chaque ligne du fichier
 foreach ($lines as $line) {
-    $line = trim($line); // pour supprimer les espaces en fin de lignes
+    $line = trim($line);
 
-    // vérifier si la ligne correspond à une date (REGEX)
+    // Vérifier si la ligne correspond à une date (format dd-mm-yy)
     if (preg_match('/^(\d{2}-\d{2}-\d{2})/', $line, $matches)) {
-        // Nouvelle date trouvée
+        // Convertir la date au format Y-m-d
         $date = DateTime::createFromFormat('d-m-y', $matches[1])->format('Y-m-d');
 
-        // initialiser l'entrée dans le tableau si elle n'existe pas encore
+        // Initialiser la structure si elle n'existe pas
         if (!isset($schedule[$date])) {
-            $schedule[$date] = ['times' => []];
+            // blocks contiendra un tableau de blocs (chaque bloc = un cours différent)
+            $schedule[$date] = [
+                'blocks' => [],
+            ];
         }
 
-        // vérifier si la ligne correspond à un cours
+    // Vérifier si la ligne correspond à un créneau de cours (ex : 08:30 LBA... )
     } elseif (preg_match('/^(\d{2}:\d{2}) (.*) \((.*)\)/', $line, $matches)) {
-        // Horaire et cours trouvés
-        // extraire le code cours 
-        $code_cours = substr($matches[2], 0, 3);
+        $heure = $matches[1];        // ex: 08:30
+        $fullCourseName = $matches[2]; // ex: LPB (GAT5)
+        $location = $matches[3];    // ex: GAT5
 
-        // add les infos de cours à la date qui correspond
-        if (!isset($schedule[$date]['start_time'])) {
-            $schedule[$date]['start_time'] = $matches[1]; // h du 1er cours
-            $schedule[$date]['course'] = $matches[2]; // nom du cours
-            $schedule[$date]['location'] = $matches[3]; // local
-            $schedule[$date]['professeur'] = $professeurs[$code_cours];
+        // Extraire le code cours (ex: 'LPB')
+        $code_cours = substr($fullCourseName, 0, 3);
+
+        // --- Nouveau bloc ou bloc existant ? ---
+        // Récupérer la liste des blocs existants pour ce $date
+        $blocks = &$schedule[$date]['blocks'];
+
+        // Vérifier si on n'a aucun bloc ou si le code a changé
+        if (empty($blocks) || (end($blocks)['code'] ?? '') !== $code_cours) {
+            // Créer un nouveau bloc
+            $blocks[] = [
+                'code'       => $code_cours,
+                'course'     => $fullCourseName,
+                'location'   => $location,
+                'professeur' => $professeurs[$code_cours] ?? 'Inconnu',
+                'start_time' => $heure,
+                'end_time'   => null, // On la précisera plus tard
+                'times'      => []    // Les créneaux intermédiaires
+            ];
         }
 
-
-        // ajouter le détail de chaque créneau 
-        $schedule[$date]['times'][] = [
-            'time' => $matches[1],
-            'course' => $matches[2],
-            'location' => $matches[3],
-            'professeur' => $professeurs[$code_cours],
-        ];
+        // Ajouter ce créneau à la fin du bloc en cours
+        $lastIndex = count($blocks) - 1;
+        $blocks[$lastIndex]['times'][] = $heure;
     }
 }
 
-// Ajuster l'heure de fin pour chaque date
-foreach ($schedule as &$day) {
-    if (!empty($day['times'])) {
-        $last_time = end($day['times'])['time'];
-        $end_time = strtotime($last_time) + 50 * 60; // Ajouter 50 minutes
-        $day['end_time'] = date('H:i', $end_time);
+// Ajuster l'heure de fin pour chaque bloc
+foreach ($schedule as $date => &$data) {
+    if (!empty($data['blocks'])) {
+        foreach ($data['blocks'] as $idx => &$block) {
+            // end_time = heure du dernier créneau + 50 minutes
+            if (!empty($block['times'])) {
+                $last_time = end($block['times']);
+                $end_time = strtotime($last_time) + 50 * 60;
+                $block['end_time'] = date('H:i', $end_time);
+            }
+        }
     }
 }
 
-// Trier les dates
+// Trier les dates (ordre chronologique)
 ksort($schedule);
+
+// echo '<pre>'; print_r($schedule); echo '</pre>';
+
 
 ?>
 
-<!-- tableau complet des cours  -->
-
-<!-- <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Liste complète des cours</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <h1>Liste complète des cours</h1>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Heure de début</th>
-            <th>Heure de fin</th>
-            <th>Cours</th>
-            <th>Local</th>
-            <th>Professeur</th>
-        </tr>
-        <?php foreach ($schedule as $date => $day): ?>
-            <?php if (isset($day['start_time']) && isset($day['end_time']) && isset($day['course']) && isset($day['location']) && isset($day['professeur'])): ?>
-                <tr>
-                    <td><?= DateTime::createFromFormat('Y-m-d', $date)->format('d-m-y') ?></td>
-                    <td><?= $day['start_time'] ?></td>
-                    <td><?= $day['end_time'] ?></td>
-                    <td><?= $day['course'] ?></td>
-                    <td><?= $day['location'] ?></td>
-                    <td><?= $day['professeur'] ?></td>
-                </tr>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </table>
-</body>
-</html> -->

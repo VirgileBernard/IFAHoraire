@@ -20,6 +20,12 @@ body {
     border-radius: 16px;
 }
 
+
+tbody tr {
+    height: 25vh;
+    width: 15vw;
+}
+
 .monthSelector {
     display: flex;
     width: 100%;
@@ -62,7 +68,6 @@ body {
     padding: 10px;
     vertical-align: top;
     width: 14.4%;
-    height: 20%;
 }
 
 .calendar__table--6weeks td {
@@ -74,6 +79,7 @@ body {
     font-size: 1.2em;
     color: #1D212D;
 }
+
 
 
 .calendar__othermonth {
@@ -91,9 +97,15 @@ body {
     color: #012122;
 }
 
+.course-time {
+    font-size: 0.8em;
+    margin-top: 30px;
+}
+
 .course-info {
     font-size: 0.8em;
     margin-top: 5px;
+    margin-left: 5px;
 }
 
 .calendar__day {
@@ -107,10 +119,23 @@ body {
 }
 
 .calendar__day-content {
-    display: grid;
-    grid-template-rows: 20% 20% 60%;
-    text-align-last: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Aligne tous les enfants à gauche */
+    position: relative;
+    /* Permet de positionner le span à droite */
 }
+
+.calendar__day-content>span {
+    position: absolute;
+    /* Le sort du flux normal */
+    right: 5;
+    /* Le colle à droite */
+    top: 0;
+    /* L'aligne en haut */
+}
+
 
 .calendar__othermonth {
     background-color: #f0f0f0;
