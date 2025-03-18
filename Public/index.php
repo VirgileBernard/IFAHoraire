@@ -42,12 +42,7 @@ for ($i = 0; $i < $month->getWeeks(); $i++): ?>
         $weekDates[] = (clone $start)->modify("+" . ($k + $i * 7) . " days");
     }
     
-    // Vérifier si la semaine doit être affichée
-    if (!$month->shouldDisplayWeek($weekDates, $weeksDisplayed)) {
-        continue; // On saute cette semaine si elle ne doit pas être affichée
-    }
 
-    $weeksDisplayed++;
     ?>
     
     <tr>

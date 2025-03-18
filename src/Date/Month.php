@@ -67,32 +67,4 @@ class Month {
         return new self($month, $year);
     }
 
-    // Si une semaine est entièrement hors du mois, elle est supprimée, sauf si le mois commence un lundi
-    public function shouldDisplayWeek(array $dates, int $weeksDisplayed): bool {
-        $outOfMonthDays = 0;
-        $inMonthDays = 0;
-        foreach ($dates as $date) {
-            if ($this->withinMonth($date)) {
-                $inMonthDays++;
-            } else {
-                $outOfMonthDays++;
-            }
-        }
-        // Si la semaine contient au moins un jour du mois, elle doit être affichée
-        if ($inMonthDays > 0) {
-            return true;
-        }
-        
-        // Vérifier si le mois commence un lundi et forcer 5 semaines d'affichage
-        $firstDayOfMonth = $this->getStartingDay();
-        $firstDayIsMonday = $firstDayOfMonth->format('N') === '1';
-        
-        // On s'assure que le calendrier affiche toujours au moins 5 semaines
-        if ($firstDayIsMonday && $weeksDisplayed < 4) {
-            return true;
-        }
-        
-        // Si la semaine ne contient que des jours hors du mois ET que 5 semaines sont déjà affichées, on l'exclut
-        return $weeksDisplayed < 5;
-    }
 }
