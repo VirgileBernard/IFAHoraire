@@ -443,6 +443,13 @@ Lu
 
 15:40 ADB (GAT5)
 
+
+27
+
+21-01-25
+
+Ma
+
 08:30 LDB (GAT5)
 
 09:20 LDB (GAT5)
@@ -450,12 +457,6 @@ Lu
 10:30 LDB (GAT5)
 
 11:20 LDB (GAT5)
-
-27
-
-21-01-25
-
-Ma
 
 Année : 2024-2025 (Edition : 07-02-25 / Derniere Modification :23-01-25 03:05:46 PM)
 Classe : COEN - X75 X77 1A - Développeur web (BE/FE) (W1/B/X75/25/0/N/165709)
@@ -471,11 +472,29 @@ Lu
 
 10:30 LPB (GAT5)
 
+11:20 LPB (GAT5)
+
+13:00 ADB (GAT5)
+
+13:50 ADB (GAT5)
+
+14:50 ADB (GAT5)
+
+15:40 ADB (GAT5)
+
 29
 
 28-01-25
 
 Ma
+
+08:30 LDB (GAT5)
+
+09:20 LDB (GAT5)
+
+10:30 LDB (GAT5)
+
+11:20 LDB (GAT5)
 
 30
 
@@ -483,11 +502,11 @@ Ma
 
 Lu
 
-31
+08:30 LPB (GAT5)
 
-04-02-25
+09:20 LPB (GAT5)
 
-32
+10:30 LPB (GAT5)
 
 11:20 LPB (GAT5)
 
@@ -499,21 +518,9 @@ Lu
 
 15:40 ADB (GAT5)
 
-08:30 LDB (GAT5)
+31
 
-09:20 LDB (GAT5)
-
-10:30 LDB (GAT5)
-
-11:20 LDB (GAT5)
-
-13:00 ADB (GAT5)
-
-13:50 ADB (GAT5)
-
-14:50 ADB (GAT5)
-
-15:40 ADB (GAT5)
+04-02-25
 
 Ma
 
@@ -524,6 +531,8 @@ Ma
 10:30 LDB (GAT5)
 
 11:20 LDB (GAT5)
+
+32
 
 10-02-25
 
@@ -1152,5 +1161,3 @@ Remarques :
 15/09/2024 :
 
 (BOUVE Olivier), 15/09/2024 : (BOUVE Olivier)
-
-

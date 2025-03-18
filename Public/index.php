@@ -4,7 +4,8 @@ require '../src/Date/data.php';
 require '../src/Date/Month.php';
 
 $month = new App\Date\Month($_GET['month'] ?? null, $_GET['year'] ?? null);
-$start = $month->getStartingDay()->modify("last monday");
+$start = $month->getStartingDay();
+$start = $start->format('N') === '1' ? $start : $month->getStartingDay()->modify("last monday");
 ?>
 
 <!DOCTYPE html>
