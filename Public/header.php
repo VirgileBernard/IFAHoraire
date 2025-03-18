@@ -8,7 +8,9 @@ if (session_status() === PHP_SESSION_NONE) {
         <a class="navbar-brand" href="index.php">IFA - HORAIRE</a>
         <div class="d-flex">
             <?php if (isset($_SESSION['user'])): ?>
-                <p class="m-2 text-success">Connecté en tant que : <strong><?= $_SESSION['user'] ?></strong></p>
+                <p class="m-2 text-success">
+                    Connecté en tant que : <strong><?= htmlspecialchars($_SESSION['user']) ?></strong>
+                </p>
                 <a href="login.php" class="btn btn-danger btn-sm">Déconnexion</a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-primary btn-sm">Connexion</a>

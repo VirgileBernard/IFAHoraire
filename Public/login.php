@@ -40,6 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = "Email ou mot de passe incorrect.";
     }
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user['prenom'] . ' ' . $user['nom']; // Met à jour avec le bon utilisateur
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['role'] = isset($user['classe_id']) ? 'utilisateur' : 'admin';
+    
+        header('Location: index.php');
+        exit;
+    }
+    
 }
 ?>
 

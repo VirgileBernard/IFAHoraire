@@ -1,6 +1,50 @@
 <?php
-// Chemin vers le fichier texte
-$file_path = 'C:/wamp64/www/IFAPME/gitIFAHoraire/IFAHoraire/src/Date/horaire_classe A.txt';
+// Éviter d'appeler session_start() si une session est déjà active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once 'db.php';
+
+if (!isset($_SESSION['email'])) {
+    die("Utilisateur non connecté !");
+}
+
+// Récupérer l'email de l'utilisateur connecté
+$email = $_SESSION['email'];
+
+// Récupérer la classe de l'utilisateur
+$stmt = $pdo->prepare("
+    SELECT c.nom_classe 
+    FROM utilisateur u
+    JOIN classe c ON u.classe_id = c.id
+    WHERE u.email = :email
+");
+$stmt->execute(['email' => $email]);
+$classe = $stmt->fetchColumn();
+
+// Vérifier si une classe a été trouvée
+if (!$classe) {
+    die("Classe non définie pour cet utilisateur !");
+}
+
+// Déterminer le fichier en fonction de la classe
+$files = [
+    'A' => 'uploads/horaire_classe A.txt',
+    'B' => 'uploads/X75_1B_horaire_classe_20241105.txt'
+];
+
+if (!isset($files[$classe])) {
+    die("Fichier d'horaire introuvable pour la classe $classe !");
+}
+
+// Chemin vers le fichier de l'horaire correspondant
+$file_path = $files[$classe];
+
+// Vérifier si le fichier existe
+if (!file_exists($file_path)) {
+    die("Le fichier d'horaire pour la classe $classe est manquant !");
+}
 
 // Lire le contenu du fichier
 $content = file_get_contents($file_path);
@@ -28,45 +72,33 @@ foreach ($lines as $line) {
 
     // Vérifier si la ligne correspond à une date (format dd-mm-yy)
     if (preg_match('/^(\d{2}-\d{2}-\d{2})/', $line, $matches)) {
-        // Convertir la date au format Y-m-d
         $date = DateTime::createFromFormat('d-m-y', $matches[1])->format('Y-m-d');
 
-        // Initialiser la structure si elle n'existe pas
         if (!isset($schedule[$date])) {
-            // blocks contiendra un tableau de blocs (chaque bloc = un cours différent)
-            $schedule[$date] = [
-                'blocks' => [],
-            ];
+            $schedule[$date] = ['blocks' => []];
         }
-
-    // Vérifier si la ligne correspond à un créneau de cours (ex : 08:30 LBA... )
-    } elseif (preg_match('/^(\d{2}:\d{2}) (.*) \((.*)\)/', $line, $matches)) {
-        $heure = $matches[1];        // ex: 08:30
-        $fullCourseName = $matches[2]; // ex: LPB (GAT5)
-        $location = $matches[3];    // ex: GAT5
-
-        // Extraire le code cours (ex: 'LPB')
+    }
+    // Vérifier si la ligne correspond à un créneau de cours
+    elseif (preg_match('/^(\d{2}:\d{2}) (.*) \((.*)\)/', $line, $matches)) {
+        $heure = $matches[1];
+        $fullCourseName = $matches[2];
+        $location = $matches[3];
         $code_cours = substr($fullCourseName, 0, 3);
 
-        // --- Nouveau bloc ou bloc existant ? ---
-        // Récupérer la liste des blocs existants pour ce $date
         $blocks = &$schedule[$date]['blocks'];
 
-        // Vérifier si on n'a aucun bloc ou si le code a changé
         if (empty($blocks) || (end($blocks)['code'] ?? '') !== $code_cours) {
-            // Créer un nouveau bloc
             $blocks[] = [
-                'code'       => $code_cours,
-                'course'     => $fullCourseName,
-                'location'   => $location,
+                'code' => $code_cours,
+                'course' => $fullCourseName,
+                'location' => $location,
                 'professeur' => $professeurs[$code_cours] ?? 'Inconnu',
                 'start_time' => $heure,
-                'end_time'   => null, // On la précisera plus tard
-                'times'      => []    // Les créneaux intermédiaires
+                'end_time' => null,
+                'times' => []
             ];
         }
 
-        // Ajouter ce créneau à la fin du bloc en cours
         $lastIndex = count($blocks) - 1;
         $blocks[$lastIndex]['times'][] = $heure;
     }
@@ -75,8 +107,7 @@ foreach ($lines as $line) {
 // Ajuster l'heure de fin pour chaque bloc
 foreach ($schedule as $date => &$data) {
     if (!empty($data['blocks'])) {
-        foreach ($data['blocks'] as $idx => &$block) {
-            // end_time = heure du dernier créneau + 50 minutes
+        foreach ($data['blocks'] as &$block) {
             if (!empty($block['times'])) {
                 $last_time = end($block['times']);
                 $end_time = strtotime($last_time) + 50 * 60;
@@ -86,11 +117,7 @@ foreach ($schedule as $date => &$data) {
     }
 }
 
-// Trier les dates (ordre chronologique)
+// Trier les dates
 ksort($schedule);
 
-// echo '<pre>'; print_r($schedule); echo '</pre>';
-
-
 ?>
-
