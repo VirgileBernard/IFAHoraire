@@ -165,7 +165,7 @@ tbody tr {
 
 
 
-/* upload.php  */
+/* ///////////////////////////upload.php  */
 
 
 
@@ -173,7 +173,7 @@ tbody tr {
     background-color: rgba(255, 255, 255, 0.3);
     width: 90%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 4rem;
     border-radius: 16px;
 }
 
@@ -194,7 +194,7 @@ tbody tr {
 }
 
 
-/* login.php */
+/* ///////////////////////////// login.php */
 
 .bodyLogin {
     background-color: #91A7E0;
@@ -208,7 +208,14 @@ tbody tr {
 
 .login-container {
     text-align: center;
-    color: white;
+    color: #1D212D;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    width: 40vw;
+    height: 60vh;
 }
 
 .login-container h1 {
@@ -242,12 +249,102 @@ tbody tr {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 4vh;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 700;
     /* Ajout de la transition */
 }
 
 .login-container button:hover {
-    background-color: white;
+    background-color: #91A7E0;
+    color: #1D212D;
+}
+
+
+/* ///////////////////////////set_password.php */
+
+.body_set_password {
+    background-color: #91A7E0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: inter;
+    display: flex;
+
+}
+
+.set_passwordContainer {
+    text-align: center;
+    color: #1D212D;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    width: 40vw;
+    height: 60vh;
+}
+
+.set_passwordContainer h1 {
+    margin-bottom: 20px;
+    font-family: inter;
+    font-weight: 700;
+    color: #1D212D;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.set_passwordContainer label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #1D212D;
+    text-align-last: left;
+    margin-left: 40px;
+}
+
+.set_passwordContainer input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select-classe-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 10px auto;
+    gap: 10px;
+    /* espace entre label et select */
+}
+
+.select-classe-group label {
+    margin: 0;
+    width: 50%;
+    text-align: left;
+}
+
+.select-classe-group select {
+    width: 30%;
+}
+
+.set_passwordContainer button {
+    background-color: #1D212D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Ajout de la transition */
+    font-weight: 700;
+}
+
+.set_passwordContainer button:hover {
+    background-color: #91A7E0;
     color: #1D212D;
 }
