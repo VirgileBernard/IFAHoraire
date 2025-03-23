@@ -3,41 +3,41 @@ session_start();
 require 'db.php';
 
 // Vérifier si l'utilisateur est bien connecté
-if (!isset($_SESSION['email'])) {
-    header('Location: login.php');
-    exit;
-}
+// if (!isset($_SESSION['email'])) {
+//     header('Location: login.php');
+//     exit;
+// }
 
-$email = $_SESSION['email'];
-$role = $_SESSION['role'];
+// $email = $_SESSION['email'];
+// $role = $_SESSION['role'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newPassword = $_POST['new_password'];
-    $confirmPassword = $_POST['confirm_password'];
-    $classe = $_POST['classe'] ?? null;
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     $newPassword = $_POST['new_password'];
+//     $confirmPassword = $_POST['confirm_password'];
+//     $classe = $_POST['classe'] ?? null;
 
-    if ($newPassword !== $confirmPassword) {
-        $error = "Les mots de passe ne correspondent pas.";
-    } else {
-        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+//     if ($newPassword !== $confirmPassword) {
+//         $error = "Les mots de passe ne correspondent pas.";
+//     } else {
+//         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-        if ($role === 'utilisateur') {
-            if (!$classe) {
-                $error = "Veuillez sélectionner une classe.";
-            } else {
-                $stmt = $pdo->prepare("UPDATE utilisateur SET password = ?, classe_id = ? WHERE email = ?");
-                $stmt->execute([$hashedPassword, $classe, $email]);
-            }
-        } else {
-            $stmt = $pdo->prepare("UPDATE admin SET password = ? WHERE email = ?");
-            $stmt->execute([$hashedPassword, $email]);
-        }
+//         if ($role === 'utilisateur') {
+//             if (!$classe) {
+//                 $error = "Veuillez sélectionner une classe.";
+//             } else {
+//                 $stmt = $pdo->prepare("UPDATE utilisateur SET password = ?, classe_id = ? WHERE email = ?");
+//                 $stmt->execute([$hashedPassword, $classe, $email]);
+//             }
+//         } else {
+//             $stmt = $pdo->prepare("UPDATE admin SET password = ? WHERE email = ?");
+//             $stmt->execute([$hashedPassword, $email]);
+//         }
 
-        $_SESSION['message'] = "Mot de passe défini avec succès.";
-        header('Location: index.php');
-        exit;
-    }
-}
+//         $_SESSION['message'] = "Mot de passe défini avec succès.";
+//         header('Location: index.php');
+//         exit;
+//     }
+// }
 ?>
 
 <!DOCTYPE html>
