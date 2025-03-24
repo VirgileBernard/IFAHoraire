@@ -170,27 +170,48 @@ tbody tr {
 
 
 .uploaderContainer {
+    text-align: center;
+    color: #1D212D;
     background-color: rgba(255, 255, 255, 0.3);
-    width: 90%;
     margin: 0 auto;
     padding: 4rem;
     border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    width: 40vw;
+    height: 40vh;
 }
 
 .uploaderContainer h2 {
-    color: rgb(0, 0, 0);
-    text-align: left;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: inter;
+    font-weight: 700;
+    color: #1D212D;
 }
 
 .uploaderContainer input {
-    padding: 20px;
-    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
 }
 
 .uploaderContainer button {
-    width: 10%;
-    display: block;
-    margin: 0 auto;
+    background-color: #1D212D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 4vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 700;
+    /* Ajout de la transition */
+}
+
+.uploaderContainer button:hover {
+    background-color: #91A7E0;
+    color: #1D212D;
 }
 
 
@@ -215,7 +236,7 @@ tbody tr {
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.199);
     width: 40vw;
-    height: 60vh;
+    height: 50vh;
 }
 
 .login-container h1 {
@@ -283,7 +304,7 @@ tbody tr {
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.199);
     width: 40vw;
-    height: 60vh;
+    height: 50vh;
 }
 
 .set_passwordContainer h1 {

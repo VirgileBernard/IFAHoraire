@@ -11,6 +11,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <p class="m-2 text-success">
                     Connecté en tant que : <strong><?= htmlspecialchars($_SESSION['user']) ?></strong>
                 </p>
+                <?php if (!$_SESSION['is_admin']): ?>
+  <a href="edit_profil.php" class="btn btn-outline-primary">Mon Profil</a>
+<?php endif; ?>
                 <a href="login.php" class="btn btn-danger btn-sm">Déconnexion</a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-primary btn-sm">Connexion</a>
