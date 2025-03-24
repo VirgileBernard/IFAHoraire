@@ -17,8 +17,11 @@ $email    = $_SESSION['email'];
 // Pour stocker le planning parsé
 $schedule = [];
 
-// CAS 1 : Élève => on récupère la classe en base depuis la table `utilisateurs`
-if ($is_admin === 1) {
+// ======================
+// Choix de la classe
+// ======================
+if (!$is_admin) {
+    // CAS 1 : Élève -> on récupère la classe depuis la BDD
     $stmt = $pdo->prepare("SELECT classe_id FROM utilisateurs WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $classe = $stmt->fetchColumn();
@@ -26,15 +29,21 @@ if ($is_admin === 1) {
     if (!$classe) {
         die("Classe non définie pour cet élève !");
     }
-
-// CAS 2 : Admin => la classe n'est pas en base, on la suppose stockée en $_SESSION['classe']
+    
 } else {
-    // S’il n’a pas de classe en session, on arrête (ou on laisse `$schedule` vide)
-    $classe = $_SESSION['classe'] ?? null;
+    // CAS 2 : Admin -> la classe est choisie via la navbar (POST ou SESSION)
+    // - L'admin envoie un formulaire (méthode POST) pour sélectionner la classe
+    // - Sinon on regarde s'il y a déjà une classe stockée en session
+    $classe = $_POST['classe'] ?? $_SESSION['classe'] ?? null;
+
+    // Si aucune classe n'est spécifiée, on s’arrête. (Le $schedule restera vide)
+    // L’admin verra un calendrier vide tant qu’il n’a pas choisi une classe.
     if (!$classe) {
-        // On arrête ici, $schedule reste vide, index.php l’affichera comme “Aucune classe”
         return;
     }
+
+    // On stocke en session la classe sélectionnée pour les prochains rechargements
+    $_SESSION['classe'] = $classe;
 }
 
 // À ce stade, `$classe` vaut '1' ou '2'

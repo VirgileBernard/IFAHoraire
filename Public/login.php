@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (is_null($user['password'])) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = isset($user['classe_id']) ? 'utilisateur' : 'admin';
+            $_SESSION['is_admin'] = !isset($user['classe_id']); // Définir is_admin
             header('Location: set_password.php');
             exit;
         }
@@ -32,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user'] = $user['prenom'] . ' ' . $user['nom'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = isset($user['classe_id']) ? 'utilisateur' : 'admin';
+            $_SESSION['is_admin'] = !isset($user['classe_id']); // Définir is_admin
             header('Location: index.php');
             exit;
         } else {
@@ -40,15 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = "Email ou mot de passe incorrect.";
     }
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['prenom'] . ' ' . $user['nom']; // Met à jour avec le bon utilisateur
-        $_SESSION['email'] = $user['email'];
-        $_SESSION['role'] = isset($user['classe_id']) ? 'utilisateur' : 'admin';
-    
-        header('Location: index.php');
-        exit;
-    }
-    
 }
 ?>
 
