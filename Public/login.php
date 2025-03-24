@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     // Vérifier si l'utilisateur existe dans la table utilisateur
-    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

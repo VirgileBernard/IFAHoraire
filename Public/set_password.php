@@ -25,11 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!$classe) {
                 $error = "Veuillez sélectionner une classe.";
             } else {
-                $stmt = $pdo->prepare("UPDATE utilisateur SET password = ?, classe_id = ? WHERE email = ?");
+                $stmt = $pdo->prepare("UPDATE utilisateurs SET password = ?, classe_id = ? WHERE email = ?");
                 $stmt->execute([$hashedPassword, $classe, $email]);
             }
         } else {
-            $stmt = $pdo->prepare("UPDATE admin SET password = ? WHERE email = ?");
+            $stmt = $pdo->prepare("UPDATE utilisateurs SET password = ? WHERE email = ?");
             $stmt->execute([$hashedPassword, $email]);
         }
 

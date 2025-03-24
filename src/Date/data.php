@@ -18,7 +18,7 @@ $email    = $_SESSION['email'];
 $schedule = [];
 
 // CAS 1 : Élève => on récupère la classe en base depuis la table `utilisateurs`
-if (!$is_admin) {
+if ($is_admin === 1) {
     $stmt = $pdo->prepare("SELECT classe_id FROM utilisateurs WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $classe = $stmt->fetchColumn();
