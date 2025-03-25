@@ -11,6 +11,7 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 
+
 // Récupérer les informations de l'utilisateur
 $email = $_SESSION['email'];
 $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Bonjour, <?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']) ?></h1>
+        <h1><?= htmlspecialchars($user['prenom'] ) ?>, souhaitez-vous modifier votre profil?</h1>
         <p>Statut : <strong><?= $_SESSION['is_admin'] ? 'Admin' : 'Élève' ?></strong></p>
 
         <?php if (!$_SESSION['is_admin']): ?>

@@ -1,4 +1,10 @@
 <?php
+
+// if ($_SESSION['is_admin'] != 1) {
+//   header('Location: index.php'); // Redirige vers la page principale si non admin
+//   exit;
+// }
+
 include 'header.php';
 ?>
 <!DOCTYPE html>
@@ -11,17 +17,6 @@ include 'header.php';
     <link rel="stylesheet" href="/IFAPME/gitIFAHoraire/IFAHoraire/Public/css/calendar.css?v=<?= time(); ?>">
 </head>
 <body class="bodyUpload">
-
-<!-- affichage navbar -->
-<!-- <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Calendrier IFAPME</a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav> -->
 
 <div class="uploaderContainer">
 <h2>Uploader votre fichier .txt</h2>

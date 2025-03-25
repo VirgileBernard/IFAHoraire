@@ -30,7 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Vérification du mot de passe
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user'] = $user['prenom'] . ' ' . $user['nom'];
+            $_SESSION['prenom'] = $user['prenom']; // Stocker le prénom
+            $_SESSION['nom'] = $user['nom'];  // Stocker le nom
+            $_SESSION['user'] = $user['prenom'] . ' ' . $user['nom']; // le nom en entier
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = isset($user['classe_id']) ? 'utilisateur' : 'admin';
             $_SESSION['is_admin'] = !isset($user['classe_id']); // Définir is_admin

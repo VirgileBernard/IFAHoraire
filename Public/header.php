@@ -9,7 +9,9 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="d-flex">
             <?php if (isset($_SESSION['user'])): ?>
                 <p class="m-2 text-success">
-                    Connecté en tant que : <strong><?= htmlspecialchars($_SESSION['user']) ?></strong>
+                <p class="m-2 text-success">
+    Connecté en tant que : <strong><?= htmlspecialchars($_SESSION['prenom']) ?></strong>
+</p>
                 </p>
                 <?php if (!$_SESSION['is_admin']): ?>
                     <!-- Bouton pour les élèves -->
